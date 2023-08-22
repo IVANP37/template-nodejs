@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>API-CONNEXON </title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+
+</head>
+
+<body class="landing">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt">
+			<h1><a href="index.html">API CONNEXON JOURNAL</a></h1>
+
+		</header>
+
+		<!-- Banner -->
+		<section id="banner">
+			<div class="inner">
+				<h2>API </h2>
+				<p>API <br />
+					FOR CONNEXON PROJECT <br />
+				</p>
+
+			</div>
+			<a href="#one" class="more scrolly">READ MORE</a>
+		</section>
+
+		<article id="main">
+
+			<section class="wrapper style5">
+				<div class="inner">
+
+					<section id="one">
+						<h4>API overview</h4>
+						<p>Information about the routes.</p>
+						<hr />
+						<header>
+							<h4>Category endpoint </h4>
+							<p>All categories <blockquote> <b>"../api/categories"</b> </blockquote>  get method
+								password.<br /></p>
+						</header>
+						<p>
+						<h5>Example</h5>
+						<pre><code>
+
+-----------------------	
+
+Responce 200 ok:
+ {
+	
+		"data": [
+		{
+		"id": 1,
+		"Color": "#CCCCCC",
+		"Descriptions": "From the earliest stone tools to the latest advances in artificial intelligence, robotics, blockchains and virtual reality, technology has continuously transformed our lives. Stay informed about the latest technological breakthroughs and the ethical and s",
+		"Image_pack": "tech-and-innovation-cover.png",
+		"name": "Tech & Innovation",
+		"slug": "news-and-press"
+		}
+		]
+		
+}
+							</code></pre>
+						</p>
+						<header>							
+								<h4>One Category</h4>
+								<p>Route to request <blockquote> <b> "../api/category/:id" </b> </blockquote> Method GET.<br /></p>
+							</header>
+							<p>
+							<h5>Example</h5>
+							<pre><code>
+								-----------------------	
+
+Responce 200 ok:
+{
+									
+"data": [
+	{
+	"id": 1,
+	"Color": "#CCCCCC",
+	"Descriptions": "From the earliest stone tools to the latest advances in artificial intelligence, robotics, blockchains and virtual reality, technology has continuously transformed our lives. Stay informed about the latest technological breakthroughs and the ethical and s",
+	"Image_pack": "tech-and-innovation-cover.png",
+	"name": "Tech & Innovation",
+	"slug": "news-and-press"
+	}
+         ]
+										
+	}
+								</code></pre>
+							</p>
+							<header>							
+								<h4>Post pagination</h4>
+								<p>Route to request <blockquote> <b> "../api/posts/pagination?page=1" </b> </blockquote> Method GET.<br /></p>
+							</header>
+							<p>
+							<h5>Example</h5>
+							<pre><code>
+								-----------------------	
+
+Responce 200 ok:
+{
+    "resultsPerPage": 15,
+    "page": 1,
+    "totalPages": 2,
+    "post": [
+        {
+            "id": 4,
+            "postLang": 2,
+            "postFormat": 1,
+            "title": "AMP Europe 2023 - Milan, Italy June 18-20, 2023",
+            "subheadline": null,
+            "video": null,
+            "featureImg": "https://firebasestorage.googleapis.com/v0/b/science-journal-app.appspot.com/o/amppng.png?alt=media&token=a155ab93-d5cb-444c-9b47-10ea25c44bb8",
+            "creationDate": "2023-05-19T03:00:00.000Z",
+            "status": 1,
+            "postViews": 0,
+            "postShare": 0,
+            "author": 1,
+            "tags": "{}",
+            "postContent": "<p>AMP is the leading organization in the field of molecular diagnostics ...</p><p>This year’s Congress will be held in conjunc</p><a href=”https://amp-europe-congress.com/” target=”_blank”>Go to website for more info</a>\n",
+            "category": 1,
+            "slug": "amp-europe-2023-milan-italy-june-18-20-2023"
+        },
+... 
+	}
+								</code></pre>
+							</p>
+
+							<header>							
+								<h4>Search post</h4>
+								<p>Route to request <blockquote> <b> "../api/posts/search?q=AMP&category=1" </b> </blockquote> Method GET.<br /></p>
+							</header>
+							<p>
+							<h5>Example</h5>
+							<pre><code>
+								-----------------------	
+
+Responce 200 ok:
+[
+    {
+        "id": 4,
+        "postLang": 2,
+        "postFormat": 1,
+        "title": "AMP Europe 2023 - Milan, Italy June 18-20, 2023",
+        "subheadline": null,
+        "video": null,
+        "featureImg": "https://firebasestorage.googleapis.com/v0/b/science-journal-app.appspot.com/o/amppng.png?alt=media&token=a155ab93-d5cb-444c-9b47-10ea25c44bb8",
+        "creationDate": "2023-05-19T03:00:00.000Z",
+        "status": 1,
+        "postViews": 0,
+        "postShare": 0,
+        "author": 1,
+        "tags": "{}",
+        "postContent": "<p>AMP is the leading organization in the field of molecular diagnostics, and our Europe Congress is a premier meeting of molecular professionals around the globe. As always, we will explore how cutting-edge technology and developments in molecular testing and diagnostics continue to have a major impact on patient care. Please be sure to check back for all the latest information.</p>\n\n<p>This year’s Congress will be held in conjunction with the 37th Congress of the Italian Society of Pathology and Translational Medicine (SIPMeT). We are delighted to have our Italian colleagues participate in this prominent event.</p>\n\n<a href=”https://amp-europe-congress.com/” target=”_blank”>Go to website for more info</a>\n",
+        "category": 1,
+        "slug": "amp-europe-2023-milan-italy-june-18-20-2023"
+    }
+]								</code></pre>
+							</p>
+
+
+							<header>							
+								<h4>All endpoints</h4>
+								<p>Route to request <br/>
+									Method GET.<br />
+									<blockquote> <b> "../api/category/:id"  </blockquote> Method GET.<br />
+									<blockquote> <b> "../api/categories"  </blockquote> Method POST.<br />
+									<blockquote> <b> "../api/categories"   </blockquote> Method PUT.<br />
+									<blockquote> <b> "../api/categories/:id" </blockquote> Method DELETE.<br />
+									<blockquote> <b> "../api/categories/:id" </blockquote> Method GET.<br />
+									<blockquote> <b> "../api/post/:id"  </blockquote> Method GET.<br />
+									<blockquote> <b> "../api/posts"  </blockquote> Method POST.<br />
+									<blockquote> <b> "../api/posts"  </blockquote> Method PUT.<br />
+									<blockquote> <b> "../api/posts/:id"  </blockquote> Method DELETE.<br />
+									<blockquote> <b> "../api/posts/:id"  </blockquote> Method GET.<br />
+									<blockquote> <b> "../api/status"  </blockquote> Method GET.<br />
+									<blockquote> <b> "../api/permission"  </blockquote> Method GET.<br />
+									<blockquote> <b> "../api/language"  </blockquote> Method GET.<br />
+									<blockquote> <b> "../api/format"  </blockquote> Method GET.<br />
+									<blockquote> <b> "../api/format/:id"  </blockquote> Method POST.<br />
+									<blockquote> <b> "../api/format"  </blockquote> Method PUT.<br />
+									<blockquote> <b> "../api/format/:id"  </blockquote> Method DELETE.<br />
+									<blockquote> <b> "../api/format/:id" </blockquote> Method GET.<br />
+									<blockquote> <b> "../api/authors"  </blockquote>Method GET.<br /> 
+									<blockquote> <b> "../api/authors/:id"  </blockquote> Method POST.<br />
+									<blockquote> <b> "../api/authors"  </blockquote> Method PUT.<br />
+									<blockquote> <b> ".../api/authors/:id"  </blockquote> Method DELETE.<br />
+									<blockquote> <b> ".../api/authors/:id" </blockquote> Method GET.<br /> 
+									<blockquote> <b> "../api/users"  </blockquote>Method GET.<br /> 
+									<blockquote> <b> "../api/users/:id"  </blockquote> Method POST.<br />
+									<blockquote> <b> "../api/users"  </blockquote> Method PUT.<br />
+									<blockquote> <b> ".../api/users/:id"  </blockquote> Method DELETE.<br />
+									<blockquote> <b> ".../api/users/:id" </blockquote> Method POST.<br />
+									<blockquote> <b> ".../api/upload" ---Save files in AWS S3 </blockquote>		
+									</p>
+							</header>
+					</section>
+
+					<!-- CTA -->
+					
+
+					<!-- Footer -->
+					<footer id="footer">
+
+						<ul class="copyright">
+							<li>&copy;CONNEXON</li>
+							<li>DESIGN: <a href="#">CONNEXON Team Backend</a></li>
+						</ul>
+					</footer>
+
+				</div>
+
+				<!-- Scripts -->
+				<script src="assets/js/jquery.min.js"></script>
+				<script src="assets/js/jquery.scrollex.min.js"></script>
+				<script src="assets/js/jquery.scrolly.min.js"></script>
+				<script src="assets/js/skel.min.js"></script>
+				<script src="assets/js/util.js"></script>
+				<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+				<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

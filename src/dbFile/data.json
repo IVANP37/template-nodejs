@@ -1,0 +1,6 @@
+{ 
+"host": "database-connexon.cb2nu8gdokq3.us-east-2.rds.amazonaws.com",
+"user": "admin",
+"password": "Marlhom041223",
+"database": "connexon"
+} 
